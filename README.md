@@ -98,6 +98,8 @@ npm install
 npm run dev
 ```
 
+The root `vercel.json` points Vercel at the showcase automatically, so the GitHub repository can be imported without changing its root directory.
+
 ## Structure
 
 ```text
