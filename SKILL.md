@@ -1,103 +1,117 @@
 ---
 name: onesimplesite-web-designer
-description: Design, build, or redesign distinctive, conversion-focused websites for OneSimpleSite clients. Use for local-business, service-business, professional-practice, hospitality, portfolio, and small-company marketing sites where the result must feel bespoke rather than like a generic AI template. Do not use for dashboards, product application interfaces, or isolated backend work.
+description: Research, design, build, redesign, and verify distinctive production websites across local business, professional services, hospitality, portfolios, editorial, campaigns, ecommerce frontends, SaaS marketing, institutional sites, and immersive 3D experiences. Use whenever a website, landing page, multi-page marketing site, web portfolio, conversion page, or major visual redesign must feel bespoke and work in the browser. Do not use for isolated backend work or data-heavy product dashboards with no marketing or design scope.
 ---
 
 # OneSimpleSite Web Designer
 
-Build a credible client website with a clear point of view, real business substance, and production-ready responsive behavior. The skill must handle both restrained everyday client sites and highly experimental showpieces. “Premium” is not a visual style: derive the design from the client’s market, offer, audience, location, personality, proof, and appetite for spectacle.
+Build the website the subject deserves, not the website a generator usually makes. Combine business truth, buyer logic, art direction, implementation craft, and rendered verification. A quiet local-service site and a cinematic WebGL showpiece should both feel authored.
 
-## Start with evidence
+## Establish the evidence
 
-Inspect the repository, current site, supplied brief, brand files, images, and copy before proposing a direction. Preserve the existing stack and working functionality unless the user asks for a migration.
+Inspect the repository, live site, brief, brand files, copy, imagery, data, and existing behavior before choosing a direction. Preserve the current stack and working functionality unless a migration is requested or clearly justified.
 
-Identify what is known and what is missing:
+Maintain a fact ledger:
 
-- business name, service, audience, geography, and primary conversion;
-- differentiators and proof: work, reviews, credentials, outcomes, team, process;
-- required pages, contact details, integrations, legal content, and SEO targets;
-- brand assets, image rights, tone, constraints, and reference sites.
+- **verified:** supplied or supported facts that may ship;
+- **inferred:** reversible design or technical decisions;
+- **provisional:** clearly marked copy or assets awaiting approval;
+- **blocking:** facts or access without which the requested outcome cannot work.
 
-Never invent factual claims, testimonials, certifications, awards, prices, addresses, availability, or performance numbers. If critical facts are absent, ask only the questions that block a responsible build. Otherwise use concise, visibly provisional copy and record what the client must replace.
+Never invent testimonials, clients, certifications, awards, prices, addresses, availability, performance claims, or case-study results. Ask only questions whose answers materially change truth, scope, architecture, or launch readiness. For business, audience, competitor, local-market, content, or reference-site research, read [references/research-discovery.md](references/research-discovery.md).
 
-## Select the creative gear
+## Use disciplined judgment
 
-Choose from three gears based on the brief. Do not make the user translate taste into technical terms.
+- Surface assumptions and ambiguity before they become code or public copy.
+- Choose the simplest implementation capable of delivering the approved idea.
+- Make surgical edits in existing repositories; do not refactor unrelated code.
+- Translate the request into observable success criteria and loop until they pass.
+- Prefer evidence over confidence. If a fact cannot be verified, label it rather than smoothing over the gap.
 
-- **Essential:** crisp, distinctive, fast client sites for businesses such as barbers, builders, trades, clinics, cafés, and professional services. Prioritize clarity, trust, local relevance, mobile conversion, and one modest signature detail.
-- **Editorial:** higher-concept layouts, richer art direction, crafted transitions, expressive type, and more ambitious image treatment for brands that benefit from storytelling.
-- **Immersive:** portfolio-grade experiences using WebGL, 3D models, shaders, canvas, scroll choreography, spatial type, or video-like sequencing when the user asks for something cinematic, experimental, “mad,” or built to stop attention.
+## Route the project
 
-Default to Essential for ordinary commercial briefs, but never make it bland. Move up a gear when the user asks for visual ambition or the brand and audience justify it. For mixed briefs, keep conversion-critical UI simple while concentrating spectacle into one or two hero moments.
+Choose a site archetype before choosing components. Read [references/site-archetypes.md](references/site-archetypes.md) for the relevant archetype and its trust model, information architecture, and conversion logic.
 
-For Editorial or Immersive work, read [immersive-web.md](references/immersive-web.md). An immersive page still needs semantic content, a usable mobile composition, and a non-WebGL fallback.
+Choose one creative gear:
 
-## Choose one coherent art direction
+- **Essential:** fast, credible, conversion-led sites for trades, barbers, clinics, cafés, practices, hospitality, and small companies. Use one modest signature move.
+- **Editorial:** richer type, imagery, rhythm, and storytelling for studios, portfolios, culture, premium services, campaigns, and publications.
+- **Immersive:** a focused WebGL, canvas, 3D, spatial-type, generative, or scroll-film idea for launches and attention-led brands.
+- **System:** structured multi-page, ecommerce, institutional, or SaaS marketing sites where reusable components, content models, states, and governance matter most.
 
-Before coding, write a short internal design brief containing:
+Complexity follows the concept, not ambition alone. Keep conversion-critical UI simple even when the surrounding experience is experimental.
 
-1. **Business promise:** the concrete outcome visitors are buying.
-2. **Audience state:** what they fear, need to understand, and need to trust.
-3. **Creative thesis:** one sentence connecting the visual idea to this business.
-4. **Design DNA:** type roles, palette roles, geometry, imagery treatment, spacing rhythm, and motion character.
-5. **Signature move:** one memorable, context-specific visual or interaction motif; in Immersive mode, define the hero scene and its physical behavior.
-6. **Conversion path:** primary CTA, secondary CTA, and proof needed before each ask.
+## Write the internal design read
 
-Read [art-direction.md](references/art-direction.md) when choosing or repairing the visual language. Do not expose the internal brief unless it helps the user review a major design choice.
+Before substantial implementation, record a compact internal brief:
 
-Commit to the chosen direction. Do not combine unrelated trends, decorate every section differently, or add visual novelty with no connection to the client.
+1. business promise and primary audience;
+2. audience need, fear, objection, and desired proof;
+3. archetype, primary conversion, and critical journeys;
+4. creative thesis linking the visual idea to the subject;
+5. design DNA: type, palette, geometry, imagery, spacing, and motion;
+6. one signature move and its mobile and reduced-motion behavior;
+7. verified content, provisional content, missing assets, and risks;
+8. technical approach and measurable completion criteria.
 
-## Shape the page around buyer decisions
+Read [references/art-direction.md](references/art-direction.md) when creating or repairing the visual language. Read [references/typography-fonts.md](references/typography-fonts.md) before selecting or acquiring type. Do not expose the internal brief unless it helps a review or resolves a consequential choice.
 
-Map the information architecture before building. The homepage should answer, in an order appropriate to the business:
+## Choose the smallest capable stack
 
-- What is offered, for whom, and where?
-- Why this business rather than another?
-- What evidence makes the promise believable?
-- What does working with them feel like?
-- What is the next low-friction action?
+Respect the existing project. For net-new work, choose from the outcome backward:
 
-Use [client-sites.md](references/client-sites.md) for page strategy, copy, trust, local SEO, forms, and launch requirements. Do not force a fixed funnel or identical section count onto every client.
+- semantic HTML, CSS, and JavaScript for small durable sites;
+- Vite with React, Vue, Svelte, or vanilla modules for interactive frontends;
+- Next.js, Astro, Nuxt, SvelteKit, or an established framework when routing, content, rendering, integrations, or the team justify it;
+- CSS and SVG before canvas; Canvas 2D before WebGL; Three.js or React Three Fiber only when spatial rendering materially supports the concept;
+- a CMS, commerce platform, booking system, or backend only when ownership or operations require one.
 
-## Build with restraint and specificity
+Do not replace an established stack because another is fashionable. Verify every dependency before importing it. Read [references/stack-architecture.md](references/stack-architecture.md) for project selection, content models, integrations, forms, and maintainability.
 
-- Reuse the project’s established components and tokens where they are sound. Check dependencies before importing packages.
-- Prefer semantic HTML, fluid sizing, CSS Grid, intrinsic layouts, and a small token system over scattered one-off values.
-- Use real client assets first. If images are missing, choose an intentional art direction before sourcing or generating them; never fill the page with unrelated stock imagery.
-- Write specific, plain copy. Avoid empty claims such as “elevate,” “seamless,” “unlock,” “tailored solutions,” and “where quality meets innovation.”
-- Treat type as structure: create clear role contrast, comfortable reading measures, balanced line breaks, and an intentional display/body pairing when appropriate.
-- Use containers only when they communicate grouping. Avoid the reflexive rounded-card grid, pill-shaped label, centered hero, purple glow, gradient headline, icon-in-a-circle feature row, and oversized empty heading treatment.
-- In Essential mode, motion must clarify hierarchy, feedback, or narrative; keep it sparse and do not add a motion library solely for spectacle. In Editorial or Immersive mode, choreography may itself carry the narrative, but it must remain art-directed and performant.
-- Use 3D and canvas as a designed layer, not as the document structure. Keep headings, copy, navigation, CTAs, and essential media accessible in HTML.
-- Make primary actions obvious without repeating the same CTA after every paragraph.
-- Build mobile composition deliberately; do not merely stack desktop columns. Keep tap targets, reading order, navigation, media crops, and form ergonomics intact.
+## Build content and visual system together
 
-## Work in complete passes
+Map the page or sitemap around real decisions: what this is, who it is for, why it is credible, what the experience or process is, and what happens next. Read [references/client-sites.md](references/client-sites.md) for conversion sites and [references/content-copy.md](references/content-copy.md) for page planning, voice, proof, and provisional copy.
 
-For a net-new site:
+Create a small token system for color roles, type roles, spacing, radii, borders, shadows, layers, motion, and containers. Components should express the chosen direction rather than force every site into the same library defaults.
 
-1. Inspect and model the business.
-2. Establish art direction and content hierarchy.
-3. Establish a runnable spine early: valid entry point, global styles, complete semantic section structure, and a passing production build. Keep it runnable while adding heavy scenes, procedural assets, and polish.
-4. Implement the complete responsive page or site in the existing stack.
-5. Replace weak placeholders and connect real destinations.
-6. Render, inspect, correct, and verify.
+Avoid unexamined generator habits: centered hero formulas, walls of equal rounded cards, eyebrow labels above every section, purple glow, gradient headlines, random glass, repeated pills, icon circles, fake dashboards, decorative statistics, and vague premium language. These are warnings, not universal bans; use a pattern only when it performs a specific job in this design.
 
-For an existing site:
+## Treat typography as infrastructure
 
-1. Preserve a baseline screenshot and inventory working behavior.
-2. Diagnose the largest trust, hierarchy, clarity, and visual-coherence problems.
-3. Fix the underlying system before polishing isolated components.
-4. Compare the result at the same viewports and retest behavior.
+Choose fonts by voice, legibility, language coverage, licence, variable axes, and delivery cost. Do not repeatedly default to the same fashionable pair. Use the bundled font catalogue and picker when useful:
 
-Do not stop at a hero mockup, style tile, or partially implemented page when the request is for a website.
+```bash
+node scripts/font-pair.mjs --list
+node scripts/font-pair.mjs --mood "industrial warm"
+node scripts/font-pair.mjs --archetype hospitality
+```
 
-## Render before calling it done
+Prefer licensed project fonts or open-source families with retained licence information. Use WOFF2, load only needed families, axes, and scripts, define fallbacks, and control layout shift. Do not bundle or redistribute commercial font files without the relevant licence.
 
-Run the project and inspect the actual rendered result. Check at minimum a narrow mobile viewport and a wide desktop viewport; add intermediate or extra-tall views when the layout warrants them. Exercise navigation, forms, accordions, carousels, menus, and every conversion route.
+## Art-direct assets and interaction
 
-Read [quality-gate.md](references/quality-gate.md) for the completion review. Iterate on what the screenshots reveal—especially folds, line breaks, alignment, image crops, rhythm, and awkward empty space. A successful build must look intentional in the browser, not merely compile.
+Use genuine client work first. When assets are missing, define the required shot, illustration, model, texture, or graphic composition before sourcing or generating it. Track origin, licence, consent, and permitted use. Do not ship random stock or misleading imagery merely to fill boxes.
 
-## Deliver clearly
+For Editorial or Immersive work, read [references/immersive-web.md](references/immersive-web.md). For interaction details, read [references/motion-interaction.md](references/motion-interaction.md). Every animation must communicate hierarchy, narrative, feedback, or state. A canvas is enhancement, never the only carrier of essential content.
 
-Summarize the design direction, what was built, verification performed, and any client-supplied facts or assets still needed. Distinguish genuine completion from provisional copy or unconnected external services.
+## Implement complete states
+
+Establish a runnable spine early: entry point, global styles, semantic structure, and a passing production build. Keep it runnable while adding heavy scenes, procedural assets, and polish.
+
+Build the requested site, not just a hero or style tile. Cover the states that exist in scope: navigation, hover, focus, active, loading, success, error, empty, disabled, menu open, reduced motion, slow media, missing data, and non-JavaScript or non-WebGL fallbacks where material.
+
+Compose mobile intentionally rather than stacking desktop columns. Preserve reading order, tap reach, image crops, form ergonomics, CTA priority, and the signature idea.
+
+## Verify in the browser
+
+Run the repository's build, lint, typecheck, and tests. Preview the production build. Inspect the actual result at mobile and wide desktop widths; add tablet, very narrow, tall, and ultrawide views when the composition changes.
+
+Read [references/quality-gate.md](references/quality-gate.md) and [references/accessibility-performance-seo.md](references/accessibility-performance-seo.md). Exercise every critical route and conversion path. Review screenshots for comprehension, trust, composition, typography, cropping, rhythm, and empty space. Fix the largest visible weakness first and repeat.
+
+Do not call a site complete while it contains dead links, fake proof, broken forms, console errors, missing fallbacks, obvious overflow, or an untested production path.
+
+## Deliver and learn
+
+Report the direction, implemented scope, verification evidence, provisional material, and launch dependencies. Distinguish implemented, verified, assumed, and blocked.
+
+When improving this skill itself, read [references/skill-evolution.md](references/skill-evolution.md), use the prompts in `evals/prompts.json`, and run `node scripts/audit-skill.mjs`. Generalize from failures; do not accumulate brittle rules for one example.

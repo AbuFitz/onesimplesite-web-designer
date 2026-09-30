@@ -1,0 +1,5 @@
+interface:
+  display_name: "OneSimpleSite Skill Lab"
+  short_description: "Test and improve the OneSimpleSite skill suite"
+  default_prompt: "Use $onesimplesite-skill-lab to audit and improve the OneSimpleSite web-design skills using realistic evaluations."
+

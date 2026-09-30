@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "notice": "Discovery catalogue of open-source families. Verify the current package, glyph coverage, and licence before client use. Retain the upstream licence when redistributing files.",
+  "families": [
+    {"name":"Albert Sans","package":"@fontsource-variable/albert-sans","license":"OFL-1.1","roles":["body","display"],"moods":["neutral","friendly","modern"],"archetypes":["local-service","saas","institutional"]},
+    {"name":"Archivo","package":"@fontsource-variable/archivo","license":"OFL-1.1","roles":["body","display"],"moods":["industrial","direct","robust"],"archetypes":["trades","commerce","saas"]},
+    {"name":"Azeret Mono","package":"@fontsource-variable/azeret-mono","license":"OFL-1.1","roles":["accent","data"],"moods":["technical","mechanical","experimental"],"archetypes":["portfolio","saas","immersive"]},
+    {"name":"Barlow Condensed","package":"@fontsource-variable/barlow-condensed","license":"OFL-1.1","roles":["display"],"moods":["industrial","sporting","urgent"],"archetypes":["trades","campaign","hospitality"]},
+    {"name":"Besley","package":"@fontsource-variable/besley","license":"OFL-1.1","roles":["display","body"],"moods":["warm","heritage","sturdy"],"archetypes":["hospitality","editorial","local-service"]},
+    {"name":"Bricolage Grotesque","package":"@fontsource-variable/bricolage-grotesque","license":"OFL-1.1","roles":["display","body"],"moods":["playful","expressive","contemporary"],"archetypes":["portfolio","campaign","immersive"]},
+    {"name":"Brygada 1918","package":"@fontsource-variable/brygada-1918","license":"OFL-1.1","roles":["display","body"],"moods":["literary","heritage","warm"],"archetypes":["editorial","hospitality","professional"]},
+    {"name":"Chivo","package":"@fontsource-variable/chivo","license":"OFL-1.1","roles":["body","display"],"moods":["direct","confident","modern"],"archetypes":["commerce","saas","local-service"]},
+    {"name":"Cormorant Garamond","package":"@fontsource-variable/cormorant-garamond","license":"OFL-1.1","roles":["display"],"moods":["luxury","literary","delicate"],"archetypes":["hospitality","editorial","portfolio"]},
+    {"name":"DM Mono","package":"@fontsource-variable/dm-mono","license":"OFL-1.1","roles":["accent","data"],"moods":["technical","quiet","precise"],"archetypes":["saas","portfolio","institutional"]},
+    {"name":"Epilogue","package":"@fontsource-variable/epilogue","license":"OFL-1.1","roles":["display","body"],"moods":["geometric","confident","clean"],"archetypes":["saas","portfolio","commerce"]},
+    {"name":"Figtree","package":"@fontsource-variable/figtree","license":"OFL-1.1","roles":["body","ui"],"moods":["friendly","clean","quiet"],"archetypes":["local-service","institutional","saas"]},
+    {"name":"Fraunces","package":"@fontsource-variable/fraunces","license":"OFL-1.1","roles":["display"],"moods":["expressive","soft","editorial"],"archetypes":["editorial","hospitality","campaign"]},
+    {"name":"IBM Plex Mono","package":"@fontsource-variable/ibm-plex-mono","license":"OFL-1.1","roles":["accent","data"],"moods":["technical","corporate","precise"],"archetypes":["saas","institutional","portfolio"]},
+    {"name":"IBM Plex Sans","package":"@fontsource-variable/ibm-plex-sans","license":"OFL-1.1","roles":["body","ui"],"moods":["rational","corporate","human"],"archetypes":["institutional","professional","saas"]},
+    {"name":"IBM Plex Serif","package":"@fontsource-variable/ibm-plex-serif","license":"OFL-1.1","roles":["body","display"],"moods":["authoritative","literary","rational"],"archetypes":["professional","editorial","institutional"]},
+    {"name":"Libre Franklin","package":"@fontsource-variable/libre-franklin","license":"OFL-1.1","roles":["body","display"],"moods":["editorial","civic","direct"],"archetypes":["institutional","editorial","campaign"]},
+    {"name":"Literata","package":"@fontsource-variable/literata","license":"OFL-1.1","roles":["body","display"],"moods":["literary","calm","authoritative"],"archetypes":["editorial","professional","institutional"]},
+    {"name":"Manrope","package":"@fontsource-variable/manrope","license":"OFL-1.1","roles":["body","ui"],"moods":["clean","modern","technical"],"archetypes":["saas","commerce","portfolio"]},
+    {"name":"Newsreader","package":"@fontsource-variable/newsreader","license":"OFL-1.1","roles":["body","display"],"moods":["editorial","warm","cultured"],"archetypes":["editorial","hospitality","professional"]},
+    {"name":"Noto Sans","package":"@fontsource-variable/noto-sans","license":"OFL-1.1","roles":["body","ui"],"moods":["neutral","global","accessible"],"archetypes":["institutional","commerce","local-service"]},
+    {"name":"Noto Serif","package":"@fontsource-variable/noto-serif","license":"OFL-1.1","roles":["body","display"],"moods":["global","authoritative","traditional"],"archetypes":["editorial","institutional","professional"]},
+    {"name":"Onest","package":"@fontsource-variable/onest","license":"OFL-1.1","roles":["body","ui","display"],"moods":["human","clean","contemporary"],"archetypes":["local-service","saas","commerce"]},
+    {"name":"Public Sans","package":"@fontsource-variable/public-sans","license":"OFL-1.1","roles":["body","ui"],"moods":["civic","clear","neutral"],"archetypes":["institutional","professional","local-service"]},
+    {"name":"Recursive","package":"@fontsource-variable/recursive","license":"OFL-1.1","roles":["display","body","accent"],"moods":["technical","experimental","flexible"],"archetypes":["portfolio","immersive","saas"]},
+    {"name":"Roboto Flex","package":"@fontsource-variable/roboto-flex","license":"OFL-1.1","roles":["body","ui","display"],"moods":["flexible","neutral","systematic"],"archetypes":["institutional","saas","commerce"]},
+    {"name":"Spline Sans","package":"@fontsource-variable/spline-sans","license":"OFL-1.1","roles":["body","display"],"moods":["soft","technical","contemporary"],"archetypes":["saas","portfolio","commerce"]},
+    {"name":"Syne","package":"@fontsource-variable/syne","license":"OFL-1.1","roles":["display"],"moods":["artistic","bold","unusual"],"archetypes":["portfolio","campaign","immersive"]},
+    {"name":"Unbounded","package":"@fontsource-variable/unbounded","license":"OFL-1.1","roles":["display"],"moods":["futuristic","bold","experimental"],"archetypes":["campaign","immersive","portfolio"]},
+    {"name":"Urbanist","package":"@fontsource-variable/urbanist","license":"OFL-1.1","roles":["body","display"],"moods":["geometric","friendly","modern"],"archetypes":["commerce","saas","local-service"]},
+    {"name":"Vollkorn","package":"@fontsource-variable/vollkorn","license":"OFL-1.1","roles":["body","display"],"moods":["warm","crafted","literary"],"archetypes":["hospitality","editorial","local-service"]}
+  ]
+}
+

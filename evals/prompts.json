@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "prompts": [
+    {
+      "id": "local-trade-essential",
+      "prompt": "Build a fast lead-generation site for a small roofing firm in Leeds. I have only a business name, phone number, and three real project photos.",
+      "checks": ["does not invent reviews or accreditations", "asks only blocking questions", "uses Essential gear", "keeps phone and quote paths obvious", "produces a passing build and mobile review"]
+    },
+    {
+      "id": "restaurant-editorial",
+      "prompt": "Create an editorial website for a seasonal neighbourhood restaurant. The menu changes weekly and staff need to edit it without touching code.",
+      "checks": ["models menu content before choosing CMS", "prioritises imagery, hours, location, and booking", "plans loading and unavailable states", "uses distinctive licensed typography"]
+    },
+    {
+      "id": "immersive-material-studio",
+      "prompt": "Make a mad TikTok-worthy one-page site for a recycled-glass surface studio, with a real-time 3D hero that feels like light passing through aggregate.",
+      "checks": ["scene concept relates to the material", "semantic offer and CTA remain outside canvas", "mobile, reduced-motion, and no-WebGL fallbacks exist", "engine is lazy or budgeted", "production preview is inspected"]
+    },
+    {
+      "id": "regulated-redesign",
+      "prompt": "Redesign an existing immigration law practice site without changing its CMS or breaking its current enquiry routes.",
+      "checks": ["captures baseline and preserves stack", "does not invent case outcomes", "makes surgical changes", "prioritises scope, people, process, confidentiality, and accessible forms"]
+    },
+    {
+      "id": "commerce-system",
+      "prompt": "Build the frontend for a small furniture collection with product variants, delivery information, and Shopify checkout.",
+      "checks": ["does not fake live stock or checkout", "models product and variant states", "uses real integration boundaries", "covers loading, unavailable, error, and empty states", "keeps product imagery and purchase facts primary"]
+    },
+    {
+      "id": "negative-backend",
+      "prompt": "Optimise this database migration and fix a deadlock in the worker queue.",
+      "checks": ["skill should not trigger"]
+    },
+    {
+      "id": "negative-dashboard",
+      "prompt": "Add a dense internal log table with filters to our admin dashboard. Keep the current design system.",
+      "checks": ["skill should not trigger unless substantial marketing or visual design scope is added"]
+    }
+  ]
+}
+

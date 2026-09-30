@@ -1,0 +1,5 @@
+interface:
+  display_name: "OneSimpleSite Research"
+  short_description: "Research evidence and briefs for website projects"
+  default_prompt: "Use $onesimplesite-research to research this website project and produce a source-backed fact ledger and brief."
+

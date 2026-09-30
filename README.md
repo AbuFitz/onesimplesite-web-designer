@@ -1,64 +1,127 @@
 # OneSimpleSite Web Designer
 
-A portable agent skill for designing and building distinctive websites for real client businesses—from clean local-business pages to cinematic 3D showpieces.
+A portable Claude Code and Codex skill suite for researching, designing, building, and verifying distinctive websites—from practical local-business sites to editorial brands, ecommerce frontends, multi-page systems, and cinematic 3D experiences.
 
-It is designed to correct the patterns that make AI-built sites feel interchangeable: generic hero formulas, repeated card grids, vague copy, disconnected visual trends, fabricated proof, and “finished” pages that were never inspected in a browser.
+The repository also contains the OneSimpleSite showcase website, a licensed open-font discovery catalogue, Windows and macOS installers, and realistic evaluation prompts.
 
-## What it changes
+## The suite
 
-The skill makes the agent:
+### `onesimplesite-web-designer`
 
-- derive a visual direction from the client’s business and audience;
-- define one coherent design DNA and one context-specific signature move;
-- organize the site around buyer decisions and credible proof;
-- preserve real facts and flag provisional client copy;
-- build responsively in the project’s existing stack;
-- render the result at mobile and desktop sizes and iterate from screenshots;
-- verify conversion routes, accessibility, metadata, and production behavior.
+The central skill. It routes the project by site archetype and creative gear, maintains a verified/inferred/provisional/blocking fact ledger, selects an appropriate stack, builds complete responsive states, and requires production-browser verification.
 
-It has three creative gears:
+Creative gears:
 
-- **Essential** for fast, trustworthy, high-converting client sites;
-- **Editorial** for more expressive brand storytelling;
-- **Immersive** for WebGL, 3D models, shaders, scroll films, spatial type, and social-media-worthy experiences with proper fallbacks.
+- **Essential** — clear, fast, high-trust customer websites;
+- **Editorial** — richer narrative, typography, imagery, and composition;
+- **Immersive** — focused WebGL, 3D, canvas, generative, or scroll-led experiences;
+- **System** — multi-page, institutional, ecommerce, or SaaS marketing systems.
+
+### `onesimplesite-research`
+
+An optional separately invokable companion for business, audience, competitor, local-market, reference-site, content, SEO-language, and integration research. It produces a source-backed brief and fact ledger instead of unsourced marketing claims.
+
+### `onesimplesite-skill-lab`
+
+An optional companion for testing and improving the suite itself. It compares candidate instructions with a baseline across varied website prompts and negative trigger cases.
+
+Research and anti-hallucination remain built into the main skill. The companions are separate only because research-only and skill-development requests benefit from precise invocation without loading the whole website builder.
 
 ## Install
 
-### Claude Code
+Download or clone this repository, then run the installer from the repository root.
 
-Copy this folder to:
+### Windows PowerShell — Claude Code
 
-```text
-~/.claude/skills/onesimplesite-web-designer
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\install.ps1 -Target Claude
 ```
 
-### Codex
+Use `-Target Codex` or `-Target Both` when needed.
 
-Copy this folder to:
+### macOS or Linux — Claude Code
 
-```text
-~/.codex/skills/onesimplesite-web-designer
+```bash
+sh scripts/install.sh claude
 ```
+
+Use `codex` or `both` as the argument when needed.
+
+The installer copies only the skill resources, not the showcase, Git history, or repository documentation.
 
 ## Use
 
-Invoke it explicitly when useful:
+In Claude Code or Codex:
 
 ```text
-Use $onesimplesite-web-designer to build a one-page website for [business].
+Use $onesimplesite-web-designer in Immersive mode to build a one-page launch site for a recycled-glass surface studio. Keep essential copy and conversion in semantic HTML, create a concept-specific 3D hero, and verify mobile, reduced-motion, and no-WebGL fallbacks.
 ```
 
-Provide the real business name, offer, audience, location, primary action, proof, brand assets, and any reference sites you genuinely want reflected. The skill will ask only for information that materially blocks a responsible build.
+For a normal customer site:
+
+```text
+Use $onesimplesite-web-designer in Essential mode to build a distinctive website for a Leeds roofing company. Use only supplied facts, label missing proof, make calling and quote requests obvious on mobile, and test the production build.
+```
+
+For evidence gathering without building:
+
+```text
+Use $onesimplesite-research to research this business, its local market, audience questions, competitors, and reference sites. Return a cited fact ledger and decision-ready website brief.
+```
+
+## Font system
+
+The catalogue in `assets/font-catalog.json` contains varied OFL-licensed starting points and Fontsource package names. It deliberately stores metadata rather than redistributing a large pile of font binaries. This keeps the skill portable, forces a current licence/package check, and lets each project acquire only the families, axes, and subsets it needs.
+
+```bash
+node scripts/font-pair.mjs --list
+node scripts/font-pair.mjs --mood "warm industrial"
+node scripts/font-pair.mjs --archetype hospitality
+```
+
+## Validate
+
+```bash
+node scripts/audit-skill.mjs
+python /path/to/skill-creator/scripts/quick_validate.py .
+```
+
+The behavioural prompt set lives in `evals/prompts.json`. A passing validator does not replace rendered website evaluation.
+
+## Showcase
+
+The `showcase/` directory is the OneSimpleSite business site and capability demonstration. Run it independently:
+
+```bash
+cd showcase
+npm install
+npm run dev
+```
 
 ## Structure
 
 ```text
 SKILL.md
 agents/openai.yaml
-references/art-direction.md
-references/client-sites.md
-references/immersive-web.md
-references/quality-gate.md
+assets/font-catalog.json
+evals/prompts.json
+references/
+scripts/
+skills/
+  onesimplesite-research/
+  onesimplesite-skill-lab/
+showcase/
 ```
 
-The core workflow stays concise; detailed art-direction, client-strategy, and browser-QA guidance is loaded only when needed.
+## Research and provenance
+
+The suite was informed by, but does not copy wholesale:
+
+- [Anthropic's frontend-design skill](https://github.com/anthropics/claude-code/tree/main/plugins/frontend-design/skills/frontend-design) for committing to a clear visual direction;
+- [Anthropic's skill-creator](https://github.com/anthropics/skills/tree/main/skills/skill-creator) for progressive disclosure and evaluate–rewrite loops;
+- [Taste Skill](https://github.com/Leonxlnx/taste-skill) for anti-default discipline and contextual design controls;
+- [Web Design Skills](https://github.com/MattiaAlessi/Web-Design-Skills) for selective orchestration across professional website concerns;
+- [Karpathy-inspired Claude guidelines](https://github.com/multica-ai/andrej-karpathy-skills) for explicit assumptions, simplicity, surgical edits, and goal-driven verification;
+- [W3C WCAG 2.2](https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/), [web.dev font guidance](https://web.dev/articles/font-best-practices), and [Google Fonts CSS2 documentation](https://developers.google.com/fonts/docs/css2) for platform practices.
+
+Third-party projects retain their own licences. Font files acquired for client projects must retain and comply with their upstream licences.
