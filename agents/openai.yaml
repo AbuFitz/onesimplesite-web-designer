@@ -1,0 +1,4 @@
+interface:
+  display_name: "OneSimpleSite Web Designer"
+  short_description: "Design distinctive, client-ready business websites"
+  default_prompt: "Use $onesimplesite-web-designer to design and build a distinctive, conversion-focused website for this client."
