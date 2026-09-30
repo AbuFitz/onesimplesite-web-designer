@@ -78,9 +78,10 @@ For a net-new site:
 
 1. Inspect and model the business.
 2. Establish art direction and content hierarchy.
-3. Implement the complete responsive page or site in the existing stack.
-4. Replace weak placeholders and connect real destinations.
-5. Render, inspect, correct, and verify.
+3. Establish a runnable spine early: valid entry point, global styles, complete semantic section structure, and a passing production build. Keep it runnable while adding heavy scenes, procedural assets, and polish.
+4. Implement the complete responsive page or site in the existing stack.
+5. Replace weak placeholders and connect real destinations.
+6. Render, inspect, correct, and verify.
 
 For an existing site:
 
