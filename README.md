@@ -4,6 +4,8 @@ A portable Claude Code and Codex skill suite for researching, designing, buildin
 
 The repository also contains the OneSimpleSite showcase website, a licensed open-font discovery catalogue, Windows and macOS installers, and realistic evaluation prompts.
 
+`CLAUDE.md` gives Claude Code the repository mission, architecture, current state, and continuation rules automatically whenever Claude opens this repository.
+
 ## The suite
 
 ### `onesimplesite-web-designer`

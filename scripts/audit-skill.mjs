@@ -31,7 +31,7 @@ try {
   errors.push(`Font catalogue is invalid: ${error.message}`);
 }
 
-for (const required of ["evals/prompts.json", "scripts/font-pair.mjs", "agents/openai.yaml"]) {
+for (const required of ["references/onesimplesite-operating-context.md", "evals/prompts.json", "scripts/font-pair.mjs", "agents/openai.yaml"]) {
   if (!existsSync(resolve(root, required))) errors.push(`Missing required suite resource: ${required}`);
 }
 
@@ -41,4 +41,3 @@ if (errors.length) {
 }
 
 console.log(`PASS: ${links.length} local references resolve; font catalogue and suite resources are valid.`);
-

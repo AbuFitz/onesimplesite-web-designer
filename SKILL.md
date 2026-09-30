@@ -7,6 +7,8 @@ description: Research, design, build, redesign, and verify distinctive productio
 
 Build the website the subject deserves, not the website a generator usually makes. Combine business truth, buyer logic, art direction, implementation craft, and rendered verification. A quiet local-service site and a cinematic WebGL showpiece should both feel authored.
 
+When the request concerns the OneSimpleSite business, canonical repository, suite architecture, roadmap, or how the skills fit together, read [references/onesimplesite-operating-context.md](references/onesimplesite-operating-context.md).
+
 ## Establish the evidence
 
 Inspect the repository, live site, brief, brand files, copy, imagery, data, and existing behavior before choosing a direction. Preserve the current stack and working functionality unless a migration is requested or clearly justified.
