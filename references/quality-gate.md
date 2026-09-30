@@ -36,6 +36,8 @@ Look for horizontal overflow, clipped focus rings, awkward folds, stranded words
 ## Engineering and delivery
 
 - Run the repository’s applicable tests, lint, typecheck, and production build.
+- Test a production preview, not only the development server. Use Lighthouse or equivalent field-oriented tooling as evidence; aim for accessibility, best-practices, and SEO scores of 95+ and performance of 90+ unless a measured, client-approved tradeoff justifies otherwise.
+- Treat Core Web Vitals as constraints: target CLS below 0.1, LCP below 2.5 seconds, and minimal main-thread blocking under a representative mobile profile. Investigate causes instead of accepting a low aggregate score.
 - Check console errors, failed requests, broken assets, missing routes, and import/package mismatches.
 - Avoid layout shift from fonts and unsized media; lazy-load below-fold media where suitable.
 - Provide useful metadata, favicon, social preview support, and error/404 handling when in scope.

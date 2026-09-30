@@ -62,6 +62,8 @@ Do not turn every section into a new animation demo. Maintain one camera languag
 Set a budget appropriate to the audience and test on a mid-range mobile profile.
 
 - Lazy-load the immersive layer when it is below the fold or nonessential.
+- Treat the 3D engine as progressive enhancement. Render a composed HTML/CSS or poster state in the first frame, code-split the engine, and load it on idle or clear engagement when immediate real-time rendering is not essential. A visitor should never wait for Three.js merely to read the offer.
+- Keep critical CSS independent of the 3D JavaScript bundle. Do not make first paint wait for the canvas engine.
 - Cap device pixel ratio, pause rendering when offscreen or hidden, and avoid an always-running loop when the scene is static.
 - Reuse geometries, materials, textures, and render targets. Dispose GPU resources on teardown.
 - Compress models and textures; choose texture resolution from rendered size, not source availability.
@@ -69,6 +71,7 @@ Set a budget appropriate to the audience and test on a mid-range mobile profile.
 - Animate transforms, uniforms, camera, and opacity; avoid layout work on every frame.
 - Detect capability failure and WebGL context loss. Never leave a blank hero.
 - Reserve media dimensions and preload only the critical first frame or minimal scene assets.
+- Prevent font-driven layout shift: self-host and preload critical fonts with suitable fallback metrics, or use reliable local stacks. Remote `@import` font chains are unsuitable for a large typographic hero.
 
 If the experience cannot stay fluid on likely client devices, simplify the scene before degrading the rest of the page.
 
@@ -94,6 +97,7 @@ In addition to the standard quality gate:
 - record or inspect the full experience from entry to CTA, not isolated screenshots only;
 - test mouse, trackpad, touch, keyboard, reduced motion, resize, tab background/foreground, and route teardown;
 - inspect frame pacing, GPU/CPU use, media weight, loading transition, and context-loss fallback;
+- audit the production build rather than the development server. Measure FCP, LCP, CLS, total blocking time, and the initial JavaScript path both before and after the immersive layer activates;
 - verify camera framing and text contrast at mobile, tablet, laptop, and wide desktop sizes;
 - check that scrolling remains predictable and users can escape pinned scenes;
 - confirm the page remains coherent while JavaScript, WebGL, or remote media is unavailable.
