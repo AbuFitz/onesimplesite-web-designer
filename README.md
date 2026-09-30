@@ -6,6 +6,8 @@ The repository also contains the OneSimpleSite showcase website, a licensed open
 
 `CLAUDE.md` gives Claude Code the repository mission, architecture, current state, and continuation rules automatically whenever Claude opens this repository.
 
+The `chatgpt/` folder configures a ChatGPT Project that helps the user turn rough ideas and client conversations into complete, skill-aware prompts for Claude Code.
+
 ## The suite
 
 ### `onesimplesite-web-designer`
@@ -102,6 +104,10 @@ npm run dev
 
 The root `vercel.json` points Vercel at the showcase automatically, so the GitHub repository can be imported without changing its root directory.
 
+## ChatGPT Prompt Studio
+
+Use [`chatgpt/SETUP.md`](chatgpt/SETUP.md) to create a ChatGPT Project for ongoing website briefing and Claude prompt preparation. The project instructions control the conversation and handoff format; the context file carries the OneSimpleSite reference knowledge.
+
 ## Structure
 
 ```text
@@ -114,6 +120,10 @@ scripts/
 skills/
   onesimplesite-research/
   onesimplesite-skill-lab/
+chatgpt/
+  PROJECT_INSTRUCTIONS.md
+  ONESIMPLESITE_CONTEXT.md
+  SETUP.md
 showcase/
 ```
 

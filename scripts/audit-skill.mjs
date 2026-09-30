@@ -31,7 +31,22 @@ try {
   errors.push(`Font catalogue is invalid: ${error.message}`);
 }
 
-for (const required of ["references/onesimplesite-operating-context.md", "evals/prompts.json", "scripts/font-pair.mjs", "agents/openai.yaml"]) {
+const requiredResources = [
+  "references/onesimplesite-operating-context.md",
+  "evals/prompts.json",
+  "scripts/font-pair.mjs",
+  "agents/openai.yaml",
+];
+
+if (existsSync(resolve(root, "README.md"))) {
+  requiredResources.push(
+    "chatgpt/PROJECT_INSTRUCTIONS.md",
+    "chatgpt/ONESIMPLESITE_CONTEXT.md",
+    "chatgpt/SETUP.md",
+  );
+}
+
+for (const required of requiredResources) {
   if (!existsSync(resolve(root, required))) errors.push(`Missing required suite resource: ${required}`);
 }
 

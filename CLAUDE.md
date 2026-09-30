@@ -28,6 +28,7 @@ Keep the system centralised in this repository.
 - `skills/onesimplesite-research/` — separate only because research-only work benefits from precise invocation.
 - `skills/onesimplesite-skill-lab/` — separate only because skill evaluation and rewriting are not ordinary client builds.
 - `showcase/` — the OneSimpleSite business/capability website.
+- `chatgpt/` — ChatGPT Project instructions and source context for conversationally preparing Claude Code prompts.
 - `scripts/install.ps1` and `scripts/install.sh` — install the suite for Claude Code and/or Codex.
 
 Do not split ordinary design, content, typography, accessibility, SEO, performance, motion, 3D, or architecture guidance into more skills unless independent invocation would materially improve routing. Prefer a focused reference inside the main skill.
@@ -76,5 +77,4 @@ Before changing the suite:
 7. If the showcase changes, run its production build and inspect desktop and mobile output.
 8. Sync installed copies only when explicitly requested; do not open, modify, or interfere with unrelated Claude sessions.
 
-Do not add ChatGPT-specific prompt packs or duplicate the entire skill into another instruction file. Keep Claude's context here and in the portable skill suite.
-
+Keep the ChatGPT prompt-director files aligned with the suite when the mission, skill names, creative gears, or handoff contract materially change. Do not duplicate the entire Claude skill into ChatGPT instructions; keep behavioral instructions compact and place reference knowledge in the project source file.
