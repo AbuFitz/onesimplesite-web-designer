@@ -59,10 +59,10 @@ The repository currently includes:
 - content, art direction, typography, font licensing, stack, integration, motion, 3D, accessibility, performance, SEO, and browser-QA references;
 - a catalogue of 31 open-source font families and a tested picker;
 - realistic evaluation prompts and a structural audit script;
-- a Vite/React showcase homepage in the OneSimpleSite green, near-black and cream identity: a scroll-drawn line, a trade index, a pinned "material in, site out" scroll, two selected projects, the team (Farhan M, Abukar S, Matt R and their quote), real fixed-price packages, FAQ, About, Work and case-study pages with a circular portal transition, reduced-motion support and Vercel configuration;
+- a complete Vite/React/Three.js showcase with responsive navigation, three live creative modes, reduced-motion support, code-split Three.js, and Vercel configuration;
 - validated Claude and Codex installation scripts.
 
-The showcase imagery (project previews, team portraits) is clearly marked "to come" until the team supplies real files. Package prices and features come from the live packages page; project write-ups and per-person quotes are not yet supplied and must not be invented. The contact address is taken from the live site.
+The showcase uses clearly labelled demonstration concepts. Its example email address is provisional and must be replaced with the approved OneSimpleSite contact before a real launch.
 
 ## Working in this repository
 
