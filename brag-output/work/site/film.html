@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>OneSimpleSite intro film</title>
+<style>
+@font-face{font-family:"Bricolage";src:url(f/bricolage-grotesque-latin-wght-normal.woff2) format("woff2");font-weight:200 800}
+@font-face{font-family:"Newsreader";src:url(f/newsreader-latin-wght-normal.woff2) format("woff2");font-weight:200 800}
+@font-face{font-family:"Manrope";src:url(f/manrope-latin-wght-normal.woff2) format("woff2");font-weight:200 800}
+:root{--ink:#171713;--bg:#11110f;--paper:#f0eadc;--lime:#d8ff3e;--coral:#ff6d4a;--blue:#85a8ff;--acc:#d8ff3e}
+*{box-sizing:border-box}
+html,body{margin:0;background:#000;overflow:hidden}
+#stage{position:relative;width:1920px;height:1080px;overflow:hidden;background:var(--bg);color:var(--paper);font-family:"Manrope",sans-serif;font-synthesis:none}
+#glow{position:absolute;left:0;top:0;width:1920px;height:1080px;pointer-events:none}
+.layer{position:absolute;left:0;top:0;width:1920px;height:1080px;pointer-events:none}
+#grain{opacity:.13;mix-blend-mode:soft-light;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.42'/%3E%3C/svg%3E");z-index:60}
+
+/* devices */
+.device{position:absolute;background:var(--ink);overflow:hidden;box-shadow:0 60px 140px rgba(0,0,0,.55),0 0 0 1px rgba(240,234,220,.14);opacity:0;transform-origin:50% 50%}
+.device .chrome{position:absolute;left:0;top:0;right:0;display:flex;align-items:center;gap:8px;padding:0 16px;background:#1d1d18;border-bottom:1px solid rgba(240,234,220,.1)}
+.device .chrome i{width:11px;height:11px;border-radius:50%;background:rgba(240,234,220,.22)}
+.device .chrome b{margin-left:14px;height:16px;flex:0 0 240px;border-radius:99px;background:rgba(240,234,220,.08)}
+.device .screen{position:absolute;overflow:hidden;background:var(--ink)}
+.device iframe{position:absolute;left:0;top:0;border:0;transform-origin:0 0;background:var(--ink)}
+
+/* headlines */
+.head{position:absolute;font-family:"Bricolage",sans-serif;font-weight:610;letter-spacing:-.07em;line-height:.9;color:var(--paper);z-index:30;white-space:nowrap}
+.head .ln{display:block}
+.head .wm{display:inline-block;overflow:hidden;vertical-align:top;padding:.06em .05em .16em;margin:-.06em -.05em -.16em}
+.head .w{display:inline-block;will-change:transform}
+.head .sp{display:inline-block;width:.24em}
+.head .em{font-family:"Newsreader",serif;font-weight:330;letter-spacing:-.055em;color:var(--acc)}
+
+/* shapes */
+.shape{position:absolute;left:0;top:0;will-change:transform,opacity}
+
+/* logo + cursor */
+#logo{position:absolute;left:0;top:0;width:1920px;height:1080px;z-index:45;color:var(--ink);pointer-events:none}
+#mark{position:absolute;border:6px solid var(--ink);border-radius:50%;display:grid;place-items:center;font-family:"Bricolage",sans-serif;font-weight:650;letter-spacing:-.04em;color:var(--ink)}
+#word{position:absolute;font-family:"Bricolage",sans-serif;font-weight:700;letter-spacing:-.045em;color:var(--ink);white-space:nowrap;line-height:1}
+#tag{z-index:46;color:var(--ink)}
+#tag .em{color:var(--ink)}
+#cursor{position:absolute;left:0;top:0;width:58px;height:58px;z-index:50;opacity:0;pointer-events:none;filter:drop-shadow(0 6px 10px rgba(0,0,0,.5))}
+#ring{position:absolute;left:0;top:0;width:90px;height:90px;margin:-45px 0 0 -45px;border-radius:50%;border:3px solid var(--acc);opacity:0;z-index:49;pointer-events:none}
+#lime{position:absolute;left:0;top:0;width:1920px;height:1080px;background:var(--lime);z-index:40}
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="glow"></div>
+  <div class="layer" id="devs">
+    <div class="device" id="devA"><div class="chrome"><i></i><i></i><i></i><b></b></div><div class="screen"><iframe id="fA" src="index.html"></iframe></div></div>
+    <div class="device" id="devB"><div class="chrome"><i></i><i></i><i></i><b></b></div><div class="screen"><iframe id="fB" src="index.html"></iframe></div></div>
+  </div>
+  <div class="layer" id="shapes" style="z-index:20"></div>
+
+  <div class="head" id="h1" style="left:118px;top:196px;font-size:250px"><span class="ln"><span class="wm"><span class="w">You’ve</span></span><span class="sp"></span><span class="wm"><span class="w">got</span></span></span><span class="ln" style="margin-left:430px"><span class="wm"><span class="w">an</span></span><span class="sp"></span><span class="wm"><span class="w em">idea.</span></span></span></div>
+
+  <div class="head" id="h2" style="left:96px;top:440px;font-size:112px"><span class="ln"><span class="wm"><span class="w">Let’s</span></span><span class="sp"></span><span class="wm"><span class="w">bring</span></span></span><span class="ln"><span class="wm"><span class="w">it</span></span><span class="sp"></span><span class="wm"><span class="w em">online.</span></span></span></div>
+
+  <div class="head" id="h3" style="left:96px;top:440px;font-size:112px"><span class="ln"><span class="wm"><span class="w">A</span></span><span class="sp"></span><span class="wm"><span class="w">website</span></span><span class="sp"></span><span class="wm"><span class="w">that</span></span></span><span class="ln"><span class="wm"><span class="w">feels</span></span><span class="sp"></span><span class="wm"><span class="w">like</span></span><span class="sp"></span><span class="wm"><span class="w em">you.</span></span></span></div>
+
+  <div class="head" id="h4" style="left:96px;top:440px;font-size:112px"><span class="ln"><span class="wm"><span class="w">Built</span></span><span class="sp"></span><span class="wm"><span class="w">around</span></span></span><span class="ln"><span class="wm"><span class="w">your</span></span><span class="sp"></span><span class="wm"><span class="w em">business.</span></span></span></div>
+
+  <div id="lime" class="layer"></div>
+  <div id="logo">
+    <div id="mark">1</div>
+    <div id="word">OneSimpleSite</div>
+  </div>
+  <div class="head" id="tag" style="left:0;width:1920px;text-align:center;top:650px;font-size:132px"><span class="ln"><span class="wm"><span class="w">Let’s</span></span><span class="sp"></span><span class="wm"><span class="w">build</span></span><span class="sp"></span><span class="wm"><span class="w em">yours.</span></span></span></div>
+
+  <div id="ring"></div>
+  <svg id="cursor" viewBox="0 0 44 44"><path d="M8 4 L8 33 L15.5 26.5 L20.5 38 L26 35.5 L21 24.5 L31 24 Z" fill="#f0eadc" stroke="#11110f" stroke-width="2.2" stroke-linejoin="round"/></svg>
+  <div class="layer" id="grain"></div>
+</div>
+
+<script>
+const W=1920,H=1080,CX=1340,CY=540;
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
+const lerp=(a,b,t)=>a+(b-a)*t;
+const seg=(t,a,b)=>clamp((t-a)/(b-a));
+const eIO=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const eO3=x=>1-Math.pow(1-x,3);
+const eOE=x=>x>=1?1:1-Math.pow(2,-10*x);
+const eI3=x=>x*x*x;
+const eBack=x=>{const c1=1.4,c3=c1+1;return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2)};
+const $=id=>document.getElementById(id);
+
+const MODES={essential:"var(--lime)"};
+const ACC={essential:"#d8ff3e",editorial:"#ff6d4a",immersive:"#85a8ff"};
+
+// ---------- iframes ----------
+const fA=$("fA"),fB=$("fB"),devA=$("devA"),devB=$("devB");
+const FREEZE=`
+[data-reveal]{opacity:1!important;transform:none!important;transition:none!important}
+html{scroll-behavior:auto!important}
+.ticker div{animation:none!important;transform:translateX(var(--tx,0px))}
+*{caret-color:transparent}
+::-webkit-scrollbar{display:none}
+html{scrollbar-width:none}`;
+function prep(f){
+  const d=f.contentDocument;
+  const s=d.createElement("style");s.textContent=FREEZE;d.head.appendChild(s);
+}
+function clickMode(f,mode){
+  const d=f.contentDocument;
+  const labels={essential:"Essential",editorial:"Editorial",immersive:"Immersive"};
+  const b=[...d.querySelectorAll(".mode-switcher button")].find(x=>x.textContent.includes(labels[mode]));
+  if(b) b.click();
+}
+function curMode(f){return f.contentDocument.documentElement.dataset.mode}
+
+// ---------- device geometry ----------
+function placeDevice(dev,f,{iw,ih,s,chrome,bezel,radius,cx=CX,cy=CY,opacity=1,ty=0,scale=1}){
+  const w=iw*s+2*bezel,h=ih*s+chrome+2*bezel;
+  dev.style.width=w+"px";dev.style.height=h+"px";
+  dev.style.left=(cx-w/2)+"px";dev.style.top=(cy-h/2+ty)+"px";
+  dev.style.borderRadius=radius+"px";
+  dev.style.opacity=opacity;
+  dev.style.transform=`scale(${scale})`;
+  dev.style.background=bezel>1?"#0a0a09":"var(--ink)";
+  dev.querySelector(".chrome").style.height=chrome+"px";
+  dev.querySelector(".chrome").style.opacity=chrome>1?clamp(chrome/36):0;
+  const sc=dev.querySelector(".screen");
+  sc.style.left=bezel+"px";sc.style.top=(chrome+bezel)+"px";
+  sc.style.width=iw*s+"px";sc.style.height=ih*s+"px";
+  sc.style.borderRadius=Math.max(0,radius-bezel)+"px";
+  const fw=Math.round(iw),fh=Math.round(ih);
+  if(f.__w!==fw||f.__h!==fh){f.style.width=fw+"px";f.style.height=fh+"px";f.__w=fw;f.__h=fh}
+  f.style.transform=`scale(${s})`;
+  return {left:cx-w/2,top:cy-h/2+ty,w,h,s,chrome,bezel};
+}
+const DESK_A={iw:1280,ih:800,s:.76,chrome:36,bezel:0,radius:18};
+const B_IW=1060,B_S=973/1060,B_IH=Math.round(608/B_S);
+
+// ---------- shapes (loose elements) ----------
+const shapesEl=$("shapes");
+let SH=[];let targetsReady=false;
+function mk(css,inner){const d=document.createElement("div");d.className="shape";d.style.cssText=css;if(inner)d.innerHTML=inner;shapesEl.appendChild(d);return d}
+function defineShapes(T){
+  // T: wireframe targets in stage coords {cx,cy,w,h}
+  const S=(name,kind,from,to,delay,css)=>({name,kind,from,to,delay,el:mk(css)});
+  const outline="border:2px solid rgba(240,234,220,.55);background:transparent;";
+  const fill="background:rgba(240,234,220,.9);";
+  const dim="background:rgba(240,234,220,.2);";
+  SH=[
+    S("spark","dot",{cx:960,cy:540,w:28,h:28,rot:0,r:14},T.button,.0,"background:var(--lime);box-shadow:0 0 60px rgba(216,255,62,.55);"),
+    S("ring","ring",{cx:1640,cy:178,w:150,h:150,rot:0,r:75},T.mark,.15,outline),
+    S("nav","pill",{cx:300,cy:880,w:200,h:58,rot:-12,r:30},T.nav,.2,outline),
+    S("h1a","bar",{cx:1490,cy:836,w:540,h:64,rot:7,r:10},T.h1a,.25,fill),
+    S("h1m","bar",{cx:620,cy:884,w:480,h:64,rot:-9,r:10},T.h1m,.28,fill),
+    S("h1b","bar",{cx:1400,cy:668,w:450,h:64,rot:-6,r:10},T.h1b,.3,"background:var(--lime);"),
+    S("p1","bar",{cx:250,cy:112,w:340,h:12,rot:14,r:6},T.p1,.35,dim),
+    S("p2","bar",{cx:1730,cy:470,w:270,h:12,rot:-21,r:6},T.p2,.4,dim),
+    S("p3","bar",{cx:690,cy:984,w:230,h:12,rot:6,r:6},T.p3,.45,dim),
+    S("panelBack","panel",{cx:1120,cy:196,w:340,h:224,rot:18,r:16},T.panelBack,.1,"background:#1c1c17;border:2px solid rgba(240,234,220,.3);"),
+    S("panelMid","panel",{cx:210,cy:980,w:300,h:190,rot:-15,r:14},T.panelMid,.2,"background:rgba(240,234,220,.9);"),
+    S("panelFront","panel",{cx:1700,cy:962,w:300,h:180,rot:11,r:14},T.panelFront,.3,"background:var(--lime);"),
+    S("orb","dot",{cx:700,cy:132,w:74,h:74,rot:0,r:37},T.orb,.35,"background:var(--coral);"),
+    S("orbit","ring",{cx:1780,cy:700,w:420,h:280,rot:-20,r:210},T.orbit,.25,"border:2px solid rgba(240,234,220,.3);"),
+    S("g1","pill",{cx:900,cy:986,w:96,h:36,rot:-4,r:20},T.g1,.5,outline),
+    S("g2","pill",{cx:1240,cy:96,w:96,h:36,rot:5,r:20},T.g2,.55,outline),
+    S("g3","pill",{cx:110,cy:560,w:96,h:36,rot:-9,r:20},T.g3,.6,outline),
+  ];
+}
+function drawShapes(t){
+  const appear=seg(t,.3,1.3);           // S1 scale-in
+  const conv0=3.15,convDur=1.5;         // converge
+  const fadeOut=1-eIO(seg(t,5.3,5.85)); // resolve into real site
+  SH.forEach((s,i)=>{
+    const el=s.el;
+    if(s.name==="spark"){
+      // the spark is always there at t=0; after the film resolves it fades with the others
+    }
+    const aDelay=s.name==="spark"?0:i*.045;
+    const a=s.name==="spark"?1:eBack(seg(t,.3+aDelay,.3+aDelay+.7));
+    const p=eIO(seg(t,conv0+s.delay,conv0+s.delay+convDur));
+    const f=s.from,to=s.to;
+    // drift while loose
+    const dr=(1-p)*14, ph=i*1.7;
+    const dx=Math.sin(t*.9+ph)*dr, dy=Math.cos(t*.7+ph*1.3)*dr;
+    let fcx=f.cx,fcy=f.cy;
+    if(s.name==="spark"){const k=eIO(seg(t,.95,1.9));fcx=lerp(960,1500,k);fcy=lerp(540,318,k)}
+    const cx=lerp(fcx,to.cx,p)+dx, cy=lerp(fcy,to.cy,p)+dy;
+    const w=lerp(f.w,to.w,p), h=lerp(f.h,to.h,p);
+    const rot=lerp(f.rot,to.rot||0,p)+Math.sin(t*.6+ph)*2*(1-p);
+    const r=s.kind==="ring"||s.kind==="dot"?Math.min(w,h)/2:lerp(f.r,Math.min(to.r??8,Math.min(w,h)/2),p);
+    let pulse=1;
+    if(s.name==="spark"){pulse=1+.35*Math.sin(clamp(t/.9)*Math.PI)*(1-seg(t,.9,1.0)) }
+    let op=a*(s.name==="spark"?1:.75+.25*p);
+    if(t>3.0 && s.name!=="spark") op=a*(.75+.25*p);
+    op*=fadeOut;
+    if(s.name==="spark") op=t<5.3?1:fadeOut;
+    if(t>16){op=0}
+    if(s.name==="spark"&&t>=19.4){
+      const q=seg(t,19.55,19.9);
+      el.style.width="28px";el.style.height="28px";el.style.borderRadius="14px";el.style.opacity=q;
+      el.style.transform=`translate(946px,526px)`;return;
+    }
+    el.style.width=w+"px";el.style.height=h+"px";
+    el.style.borderRadius=(s.kind==="ring"&&s.name==="orbit"?"50%":r+"px");
+    el.style.opacity=op;
+    el.style.transform=`translate(${cx-w/2}px,${cy-h/2}px) rotate(${rot}deg) scale(${a*pulse})`;
+  });
+}
+
+// ---------- words ----------
+const HEADS={};
+for(const id of ["h1","h2","h3","h4","tag"]){HEADS[id]=[...$(id).querySelectorAll(".w")]}
+function words(id,t,tIn,stag,dur,tOut,outDur){
+  HEADS[id].forEach((w,i)=>{
+    const pin=eOE(seg(t,tIn+i*stag,tIn+i*stag+dur));
+    const pout=eI3(seg(t,tOut+i*.05,tOut+i*.05+outDur));
+    const y=(1-pin)*112-pout*112;
+    const rot=(1-pin)*6;
+    w.style.transform=`translateY(${y}%) rotate(${rot}deg)`;
+    w.style.visibility=(pin<=0||pout>=1)?"hidden":"visible";
+  });
+}
+
+// ---------- scene state ----------
+let TG=null;
+function measureTargets(){
+  const d=fA.contentDocument,win=fA.contentWindow;
+  const o=placeDevice(devA,fA,DESK_A); // geometry anchor for conversions
+  const ox=o.left, oy=o.top+o.chrome, s=DESK_A.s, k=s/.7;
+  const conv=(r,pad=0)=>({cx:ox+(r.left+r.width/2)*s,cy:oy+(r.top+r.height/2)*s,w:Math.max(2,r.width*s),h:Math.max(2,r.height*s)});
+  const q=sel=>d.querySelector(sel).getBoundingClientRect();
+  const h1=d.querySelector(".hero h1");
+  const rng=d.createRange();rng.selectNode(h1.firstChild);
+  const lr=[...rng.getClientRects()].filter(r=>r.width>20);
+  const l1=lr[0], lm=lr[1]||lr[0], l2=h1.querySelector("em").getBoundingClientRect();
+  const thin=(r,k,w=1)=>{const c=conv(r);return {...c,w:c.w*w,h:Math.max(7,c.h*k)}}
+  const bar=(r)=>{const c=conv(r);return {...c,h:c.h*.55,r:6}};
+  const intro=q(".hero-intro");
+  const lines=[0,1,2].map(i=>({left:intro.left,top:intro.top+i*(intro.height/3)+intro.height/8,width:intro.width*(i===2?.55:1),height:intro.height/6}));
+  const sw=[...d.querySelectorAll(".mode-switcher button")].map(b=>b.getBoundingClientRect());
+  const mach=q(".machine-shell");
+  const mc=conv(mach);
+  TG={
+    button:{...conv(q(".button-primary")),rot:0,r:99},
+    mark:{...conv(q(".brand-mark")),rot:0},
+    nav:{...conv(q(".nav-cta")),rot:0,r:99},
+    h1a:{...bar(l1),rot:0,r:6},
+    h1m:{...bar(lm),rot:0,r:6},
+    h1b:{...bar(l2),rot:0,r:6},
+    p1:{...conv(lines[0]),rot:0,r:4},p2:{...conv(lines[1]),rot:0,r:4},p3:{...conv(lines[2]),rot:0,r:4},
+    panelBack:{cx:mc.cx+30*k,cy:mc.cy-18*k,w:330*k,h:220*k,rot:-3,r:10},
+    panelMid:{cx:mc.cx-30*k,cy:mc.cy-4*k,w:290*k,h:184*k,rot:2,r:10},
+    panelFront:{cx:mc.cx+22*k,cy:mc.cy+8*k,w:250*k,h:150*k,rot:-2,r:10},
+    orb:{cx:mc.cx+99*k,cy:mc.cy+57*k,w:125*k,h:125*k,rot:0},
+    orbit:{cx:mc.cx+8*k,cy:mc.cy-6*k,w:430*k,h:300*k,rot:-6},
+    g1:{...conv(sw[0]),rot:0,r:99},g2:{...conv(sw[1]),rot:0,r:99},g3:{...conv(sw[2]),rot:0,r:99},
+    mc
+  };
+  return TG;
+}
+function hexToRgba(){}
+
+let state={mA:null,mB:null,scrollA:0,scrollB:0};
+window.init=async function(){
+  await Promise.all([new Promise(r=>fA.contentDocument.readyState==="complete"?r():fA.addEventListener("load",r)),new Promise(r=>fB.contentDocument.readyState==="complete"?r():fB.addEventListener("load",r))]);
+  await document.fonts.ready;
+  prep(fA);prep(fB);
+  await new Promise(r=>setTimeout(r,500));
+  placeDevice(devA,fA,DESK_A);
+  placeDevice(devB,fB,{iw:B_IW,ih:B_IH,s:B_S,chrome:36,bezel:0,radius:18});
+  clickMode(fA,"essential");clickMode(fB,"essential");
+  await new Promise(r=>setTimeout(r,600));
+  await fA.contentDocument.fonts.ready;await fB.contentDocument.fonts.ready;
+  measureTargets();
+  defineShapes(TG);
+  // logo geometry
+  const mark=$("mark"),word=$("word");
+  word.style.fontSize="112px";
+  const tmp=word.getBoundingClientRect();
+  window.__logoW=tmp.width;
+  return {targets:TG,logoW:tmp.width,B_IH};
+};
+
+function absTop(f,sel,idx=0){
+  const d=f.contentDocument;const el=d.querySelectorAll(sel)[idx];
+  return el.getBoundingClientRect().top+f.contentWindow.scrollY;
+}
+function setScroll(f,y){f.contentWindow.scrollTo(0,Math.max(0,y))}
+
+const modeSeqB=t=>t<14.35?"essential":t<15.25?"editorial":t<16.15?"immersive":"essential";
+
+window.seek=function(t){
+  const changed=[];
+  // --- background glow follows accent
+  const g=$("glow");
+  const gx=t>16?lerp(1340,960,eIO(seg(t,19.2,20))):lerp(960,1340,eIO(seg(t,3,5)));
+  g.style.background=`radial-gradient(900px 700px at ${gx}px 540px, rgba(216,255,62,${.07*(1-seg(t,16.5,17))+.07*seg(t,19.3,20)}), transparent 70%)`;
+
+  // ---------- Device A (t 4.1 .. 13.3) ----------
+  const m=eIO(seg(t,9.7,11.25));
+  const aIn=eO3(seg(t,4.1,4.95));
+  const aOut=eI3(seg(t,12.65,13.25));
+  const dA=placeDevice(devA,fA,{
+    iw:lerp(1280,390,m),ih:lerp(800,844,m),s:lerp(.76,.86,m),
+    chrome:lerp(36,0,m),bezel:lerp(0,10,m),radius:lerp(18,46,m),
+    opacity:aIn*(1-aOut),ty:(1-aIn)*40+aOut*70,scale:lerp(.96,1,aIn)*(1-aOut*.05)
+  });
+  // iframe content visible after the wire resolves
+  const reveal=eIO(seg(t,5.7,6.25));
+  fA.style.opacity=reveal;
+  if(t>=4.1&&t<=13.3){
+    if(t>=5.0 && curMode(fA)!=="essential"){clickMode(fA,"essential");changed.push("A")}
+    // pointer parallax for the 3D machine
+    if(t>=6.0&&t<9.8){
+      const w=fA.contentWindow;
+      w.dispatchEvent(new w.PointerEvent("pointermove",{clientX:w.innerWidth*(.55+.16*Math.sin((t-6)*.9)),clientY:w.innerHeight*(.5+.1*Math.cos((t-6)*.7))}));
+    }
+    // scroll story
+    const d=fA.contentDocument;
+    const stTop=absTop(fA,".mode-statement")-(m<.5?70:60);
+    let sy=0;
+    if(t<8.2) sy=0;
+    else if(t<9.6) sy=lerp(0,stTop,eIO(seg(t,8.2,9.6)));
+    else if(t<11.25) sy=stTop;
+    else {
+      const caseTop=absTop(fA,".lime-visual")-110;
+      sy=lerp(stTop,caseTop,eIO(seg(t,11.35,12.75)));
+    }
+    setScroll(fA,sy);
+    // keep the ticker moving deterministically
+    d.querySelector(".ticker div")?.style.setProperty("--tx",(-t*60)+"px");
+  }
+
+  // ---------- Device B (t 13.1 .. 17.4) ----------
+  const bIn=eO3(seg(t,13.1,13.85));
+  const bOut=eI3(seg(t,16.55,17.2));
+  const dB=placeDevice(devB,fB,{iw:B_IW,ih:B_IH,s:B_S,chrome:36,bezel:0,radius:18,
+    opacity:bIn*(1-bOut),ty:(1-bIn)*60-bOut*30,scale:lerp(.97,1,bIn)*(1-bOut*.04)});
+  let accB="essential";
+  if(t>=13.0&&t<=17.3){
+    accB=modeSeqB(t);
+    if(curMode(fB)!==accB){clickMode(fB,accB);changed.push("B")}
+    const sw=absTop(fB,".mode-switcher");
+    setScroll(fB,sw-92);
+  }
+
+  // ---------- headlines ----------
+  const accent=t>=13.1&&t<16.9?ACC[accB]:ACC.essential;
+  document.documentElement.style.setProperty("--acc",accent);
+  words("h1",t,.55,.2,.8,3.2,.5);
+  words("h2",t,4.5,.16,.8,7.55,.45);
+  words("h3",t,8.1,.14,.8,12.5,.45);
+  words("h4",t,13.2,.16,.8,16.55,.4);
+
+  // ---------- shapes ----------
+  if(SH.length) drawShapes(t);
+
+  // ---------- cursor + clicks (S4) ----------
+  const cur=$("cursor"),ring=$("ring");
+  let cOp=0,cx=0,cy=0;
+  if(t>=13.5&&t<=17.0){
+    const d=fB.contentDocument;
+    const btns=[...d.querySelectorAll(".mode-switcher button")].map(b=>{const r=b.getBoundingClientRect();return {x:dB.left+dB.bezel+(r.left+r.width*.55)*B_S,y:dB.top+dB.chrome+dB.bezel+(r.top+r.height*.6)*B_S}});
+    const order=[btns[0],btns[1],btns[2],btns[0]];
+    const clickT=[null,14.3,15.2,16.1]; // essential is already active; first target prepares
+    const arrive=[13.95,14.25,15.15,16.05];
+    const start={x:dB.left+dB.w-60,y:dB.top+dB.h+30};
+    const pts=[start,btns[1],btns[2],btns[0]];
+    // path: start -> editorial -> immersive -> essential
+    const times=[13.55,14.3,15.2,16.1];
+    let i=0;while(i<2&&t>times[i+1])i++;
+    const k=eIO(seg(t,times[i]-(i===0?0:.0)-(i===0?0:.0),times[i+1]));
+    const a=i===0?start:pts[i],b=pts[i+1];
+    // movement window: spend the first 70% of each interval moving
+    const segStart=i===0?13.55:times[i]+.12, segEnd=times[i+1]-.04;
+    const kk=eIO(seg(t,segStart,segEnd));
+    cx=lerp(a.x,b.x,kk);cy=lerp(a.y,b.y,kk);
+    // after the last click, drift away
+    if(t>16.2){const dk=eIO(seg(t,16.3,16.9));cx=lerp(btns[0].x,btns[0].x+120,dk);cy=lerp(btns[0].y,btns[0].y+120,dk)}
+    cOp=eO3(seg(t,13.5,13.9))*(1-seg(t,16.5,16.95));
+    // click pulses
+    let rp=0,rx=cx,ry=cy;
+    for(const ct of [14.3,15.2,16.1]){const p=seg(t,ct,ct+.45);if(p>0&&p<1){rp=p;}}
+    ring.style.opacity=rp>0?(1-rp)*.9:0;
+    ring.style.transform=`translate(${cx+10}px,${cy+13}px) scale(${.3+rp*1.1})`;
+    // press squash
+    let press=1;for(const ct of [14.3,15.2,16.1]){const p=seg(t,ct-.08,ct+.1);if(p>0&&p<1)press=1-.12*Math.sin(p*Math.PI)}
+    cur.style.transform=`translate(${cx}px,${cy}px) scale(${press})`;
+  } else {ring.style.opacity=0}
+  cur.style.opacity=cOp;
+
+  // ---------- lime iris + logo ----------
+  const lime=$("lime");
+  let r=0;
+  const origin=[1340,540];
+  let ox=origin[0],oy=origin[1];
+  if(t>=16.7&&t<19.15){r=lerp(0,1500,eIO(seg(t,16.7,17.55)))}
+  if(t>=19.15){const k=eIO(seg(t,19.2,19.98));r=lerp(1500,14,k);ox=lerp(origin[0],960,k);oy=lerp(origin[1],540,k)}
+  if(t<16.7)r=0;
+  lime.style.clipPath=`circle(${r}px at ${ox}px ${oy}px)`;
+  lime.style.visibility=r<.5?"hidden":"visible";
+
+  // logo lockup: mark + wordmark centered at y=440
+  const mark=$("mark"),word=$("word");
+  const lw=window.__logoW||620, markD=112, gap=26, total=markD+gap+lw;
+  const lx=(W-total)/2, ly=420;
+  const lin=eO3(seg(t,17.4,18.1));
+  const lout=eI3(seg(t,19.0,19.45));
+  mark.style.width=markD+"px";mark.style.height=markD+"px";mark.style.fontSize="62px";
+  mark.style.left=lx+"px";mark.style.top=(ly-markD/2)+"px";
+  word.style.fontSize="112px";word.style.left=(lx+markD+gap)+"px";word.style.top=(ly-56)+"px";
+  mark.style.opacity=lin*(1-lout);
+  mark.style.transform=`scale(${lerp(.6,1,eBack(seg(t,17.4,18.0)))}) translateY(${-lout*34}px)`;
+  word.style.opacity=lin*(1-lout);
+  word.style.transform=`translateX(${(1-eO3(seg(t,17.4,18.15)))*-40}px) translateY(${-lout*34}px)`;
+  words("tag",t,17.85,.18,.7,19.0,.4);
+  $("logo").style.visibility=(t>=17.4&&t<19.5)?"visible":"hidden";
+  return changed;
+};
+window.settle=()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(()=>r(true))));
+</script>
+</body>
+</html>
